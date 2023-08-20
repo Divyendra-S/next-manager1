@@ -4,7 +4,7 @@ import UserContext from "./userContext";
 import react, { useEffect, useState } from "react";
 import { connect } from "../services/userservice";
 
-function userProvider({ children }) {
+function UserProvider({ children }) {
   const [user, setUser] = useState(undefined);
   useEffect(() => {
     const currentUser = async () => {
@@ -25,4 +25,4 @@ function userProvider({ children }) {
   );
 }
 
-export default userProvider;
+export default UserProvider;
