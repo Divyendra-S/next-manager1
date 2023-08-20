@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 
 connectDB();
 
-export async function POST(req) {
+export async function GET(req) {
   const gettoken = req.cookies.get("authToken")?.value;
   const verifytoken = jwt.verify(gettoken, process.env.JWT_SECRET);
   try {
