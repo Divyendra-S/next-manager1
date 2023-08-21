@@ -7,14 +7,13 @@ import bcrypt from "bcryptjs";
 connectDB();
 
 export async function POST(req) {
-  const { name, email, password, about, profileURL } = await req.json();
+  const { name, email, password, about } = await req.json();
   try {
     const newUser = new User({
       name: name,
       email: email,
       password: password,
       about: about,
-      profileURL: profileURL,
     });
     newUser.password = bcrypt.hashSync(
       newUser.password,

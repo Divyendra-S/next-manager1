@@ -46,7 +46,7 @@ const Navbar = () => {
               </li>
             </>
           )}
-          {
+          {!user && (
             <>
               <li>
                 <Link href="/login">login</Link>
@@ -55,7 +55,7 @@ const Navbar = () => {
                 <Link href="/signUp">signUp</Link>
               </li>
             </>
-          }
+          )}
         </ul>
       </div>
     </nav>
