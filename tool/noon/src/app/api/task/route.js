@@ -9,11 +9,12 @@ export async function POST(req) {
   const valu = req.cookies.get("authToken")?.value;
   const data = jwt.verify(valu, process.env.JWT_SECRET);
 
-  const { title, content } = await req.json();
+  const { title, content, status } = await req.json();
   const task = new Task({
     title,
     content,
     userId: data._id,
+    status,
   });
   try {
     await task.save();

@@ -24,8 +24,8 @@ const ShowTasks = () => {
   }
 
   return (
-    <div className=" bg-neutral-900 text-white flex flex-col space-y-7 p-14">
-      <h1 className="text-center">Your tasks</h1>
+    <div className="  bg-gray-900 text-white flex flex-col space-y-7 p-14">
+      <h1 className="text-center text-3xl">You have ({tasks.length}) tasks</h1>
       <div className=" flex h-screen flex-col space-y-7 justify-start p-7  items-center">
         {tasks.map((task) => (
           <Taasks task={task} key={task._id} />
