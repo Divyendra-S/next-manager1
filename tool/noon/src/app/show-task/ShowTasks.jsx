@@ -19,14 +19,13 @@ const ShowTasks = () => {
       console.log(error);
     }
   };
-  useEffect(
-    (user) => {
+  
+    
       if (user) {
         getTasks(user._id);
       }
-    },
-    [user]
-  );
+    
+  
 
   const deleteHandler = async (taskId) => {
     try {

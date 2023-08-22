@@ -1,55 +1,55 @@
-// import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 // // This function can be marked `async` if using `await` inside
-// export function middleware(request) {
-//   console.log("middleware executed");
+export function middleware(request) {
+  console.log("middleware executed");
 
-//   const authToken = request.cookies.get("authToken")?.value;
+  const authToken = request.cookies.get("authToken")?.value;
 
-//   if (
-//     request.nextUrl.pathname === "/api/login" ||
-//     request.nextUrl.pathname === "/api/user"
-//   ) {
-//     return;
-//   }
+  if (
+    request.nextUrl.pathname === "/api/login" ||
+    request.nextUrl.pathname === "/api/user"
+  ) {
+    return;
+  }
 
-//   const loggedInUserNotAccessPaths =
-//     request.nextUrl.pathname === "/login" ||
-//     request.nextUrl.pathname == "/signUp";
+  const loggedInUserNotAccessPaths =
+    request.nextUrl.pathname === "/login" ||
+    request.nextUrl.pathname == "/signUp";
 
-//   if (loggedInUserNotAccessPaths) {
-//     // access not secured route
-//     if (authToken) {
-//       return NextResponse.redirect(new URL("/login", request.url));
-//     }
-//   } else {
-//     // accessing secured route
+  if (loggedInUserNotAccessPaths) {
+    // access not secured route
+    if (authToken) {
+      return NextResponse.redirect(new URL("/login", request.url));
+    }
+  } else {
+    // accessing secured route
 
-//     if (!authToken) {
-//       if (request.nextUrl.pathname.startsWith("/api")) {
-//         return NextResponse.json(
-//           {
-//             message: "Access Denied !!",
-//             success: false,
-//           },
-//           {
-//             status: 401,
-//           }
-//         );
-//       }
+    if (!authToken) {
+      if (request.nextUrl.pathname.startsWith("/api")) {
+        return NextResponse.json(
+          {
+            message: "Access Denied !!",
+            success: false,
+          },
+          {
+            status: 401,
+          }
+        );
+      }
 
-//       return NextResponse.redirect(new URL("/", request.url));
-//     } else {
-//       // varify...
-//     }
-//   }
+      return NextResponse.redirect(new URL("/", request.url));
+    } else {
+      // varify...
+    }
+  }
 
-//   console.log(authToken);
+  console.log(authToken);
 
-//   //   return NextResponse.redirect(new URL("/home", request.url));
-// }
+  //   return NextResponse.redirect(new URL("/home", request.url));
+}
 
-// // See "Matching Paths" below to learn more
-// export const config = {
-//   matcher: ["/", "/login", "/signUp", "/addTask", "/show-task", "/api/:path*"],
-// };
+// See "Matching Paths" below to learn more
+export const config = {
+  matcher: ["/login", "/signUp", "/addTask", "/show-task", "/api/:path*"],
+};
