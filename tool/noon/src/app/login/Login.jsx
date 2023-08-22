@@ -38,7 +38,7 @@ const Login = () => {
   return (
     <div className="flex p-5 md:p-20 justify-center items-center h-screen bg-slate-900">
       <form
-        className=" bg-slate-800 rounded-2xl p-4 flex  text-slate-200 flex-col justify-between  space-y-5 flex-grow max-w-xl md:max-w-3xl h-[400px]"
+        className=" bg-slate-800 rounded-2xl p-4 transform shadow-2xl shadow-slate-500 hover:shadow-slate-600 duration-200 hover:scale-105 flex  text-slate-200 flex-col justify-between  space-y-5 flex-grow max-w-xl md:max-w-3xl h-[400px]"
         action="#!"
         onSubmit={handleSubmit}>
         <h1 className="text-center text-3xl">Login</h1>
@@ -46,7 +46,7 @@ const Login = () => {
           <div className="flex flex-col space-y-2 md:w-[400px] w-[300px]">
             <lable htmlFor="emailId">email</lable>
             <input
-              className="rounded-2xl p-2 text-black "
+              className="rounded-2xl p-2 bg-slate-700 focus:outline-none focus:border-blue-500"
               type="text"
               placeholder="Email"
               id="emailId"
@@ -63,7 +63,7 @@ const Login = () => {
           <div className="flex flex-col space-y-2 md:w-[400px] w-[300px]">
             <lable htmlFor="password">password</lable>
             <input
-              className="rounded-2xl p-2 text-black"
+              className="rounded-2xl p-2 bg-slate-700 focus:outline-none focus:border-blue-500"
               type="password"
               placeholder="Password"
               id="password"
@@ -80,7 +80,7 @@ const Login = () => {
         </div>
         <div className="text-center p-2">
           <button
-            className="rounded-full bg-sky-500 p-3 w-[150px] max-w-sm"
+            className="rounded-full bg-sky-500 p-3 w-[150px] max-w-sm transform duration-200 hover:scale-110"
             type="submit">
             login
           </button>

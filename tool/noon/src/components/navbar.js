@@ -23,9 +23,9 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center bg-gray-900 p-4 shadow-md">
       <div>
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-200">
+        <Link href="/" className="text-3xl md:text-4xl font-bold text-gray-200">
           Taskten.
-        </h1>
+        </Link>
       </div>
       <div className="text-xl mt-2 md:text-2xl">
         <ul className="flex space-x-4">

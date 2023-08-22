@@ -37,15 +37,16 @@ const SignUp = () => {
     });
   };
   return (
-    <div class=" p-6 h-screen bg-cyan-300 flex justify-center items-center">
+    <div class=" p-6 h-screen bg-gray-900 flex justify-center items-center">
       <form
-        class=" flex flex-grow h-[500px] max-w-2xl flex-col bg-cyan-600 rounded-xl p-4 w-96  justify-between"
+        class=" flex flex-grow shadow-2xl shadow-slate-500 hover:shadow-slate-600   h-[500px] max-w-2xl flex-col text-slate-100  items-center
+        bg-slate-800 rounded-xl p-6 w-96 transform duration-200 hover:scale-105  justify-between"
         onSubmit={handleSubmit}>
-        <div class=" flex flex-col space-y-4">
-          <div class="flex flex-col space-y-1">
+        <div class=" flex flex-col space-y-4 ">
+          <div class="flex flex-col space-y-1  md:w-[400px] w-[350px]">
             <label>Name</label>
             <input
-              class="rounded-xl p-2"
+              class="rounded-xl p-2 bg-slate-700  focus:outline-none focus:border-blue-500"
               type="text"
               placeholder="Enter name"
               id="name"
@@ -56,10 +57,10 @@ const SignUp = () => {
               }
             />
           </div>
-          <div class="flex flex-col space-y-1">
+          <div class="flex flex-col space-y-1  md:w-[400px] w-[350px]">
             <label>Email</label>
             <input
-              class="rounded-xl p-2"
+              class="rounded-xl p-2 bg-slate-700 focus:outline-none focus:border-blue-500"
               type="email"
               placeholder="Enter email"
               id="email"
@@ -70,10 +71,10 @@ const SignUp = () => {
               }}
             />
           </div>
-          <div class="flex flex-col space-y-1">
+          <div class="flex flex-col space-y-1  md:w-[400px] w-[350px]">
             <label>Password</label>
             <input
-              class="rounded-xl p-2"
+              class="rounded-xl p-2 bg-slate-700 focus:outline-none focus:border-blue-500"
               type="password"
               placeholder="Enter password"
               id="password"
@@ -84,10 +85,10 @@ const SignUp = () => {
               }}
             />
           </div>
-          <div class="flex flex-col space-y-1">
+          <div class="flex flex-col space-y-1  md:w-[400px] w-[350px]">
             <label>About</label>
             <input
-              class="rounded-xl p-2"
+              class="rounded-xl p-2 bg-slate-700 focus:outline-none focus:border-blue-500"
               type="text"
               placeholder="Enter about"
               id="about"
@@ -101,10 +102,10 @@ const SignUp = () => {
         </div>
         <div class="">
           <div class="flex justify-center items-end space-x-3">
-            <div class=" rounded-2xl bg-emerald-400 p-2">
+            <div class=" rounded-2xl bg-cyan-500 p-2 transform duration-200 hover:scale-110">
               <button type="submit">SignUp</button>
             </div>
-            <div class=" rounded-2xl bg-emerald-400 p-2">
+            <div class=" rounded-2xl bg-cyan-500 p-2 transform duration-200 hover:scale-110">
               <button type="button" onClick={reset}>
                 reset
               </button>

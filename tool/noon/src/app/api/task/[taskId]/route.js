@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/helper/db";
 import { Task } from "@/models/task";
+import jwt from "jsonwebtoken";
 
 connectDB();
 
@@ -21,13 +22,16 @@ export async function DELETE(req, { params }) {
 }
 
 export async function PUT(req, { params }) {
-  const { title, content, userId } = await req.json();
+  const gettoken = req.cookies.get("authToken")?.value;
+  const verifytoken = jwt.verify(gettoken, process.env.JWT_SECRET);
+  const { title, content, status } = await req.json();
   const { taskId } = params;
   try {
     const task = await Task.findById(taskId);
     (task.title = title),
       (task.content = content),
-      (task.userId = userId),
+      (task.userId = verifytoken._id),
+      (task.status = status),
       await task.save();
 
     return NextResponse.json(
